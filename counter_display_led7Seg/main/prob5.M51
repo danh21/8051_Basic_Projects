@@ -1,0 +1,150 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/03/2023  21:15:41  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE prob5.obj TO prob5
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  prob5.obj (PROB5)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?SIDIV)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?UIDIV)
+
+
+LINK MAP OF MODULE:  prob5 (PROB5)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0012H     UNIT         ?DT?PROB5
+            DATA    001AH     0004H     UNIT         _DATA_GROUP_
+            IDATA   001EH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+            CODE    0006H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0092H     008BH     UNIT         ?C?LIB_CODE
+            CODE    011DH     004AH     UNIT         ?PR?_DISPLAY_NUMBER?PROB5
+            CODE    0167H     0019H     UNIT         ?C_INITSEG
+            CODE    0180H     0018H     UNIT         ?PR?_DELAYSCAN?PROB5
+            CODE    0198H     000DH     UNIT         ?PR?ISR_EXT0?PROB5
+            CODE    01A5H     000CH     UNIT         ?PR?MAIN?PROB5
+            CODE    01B1H     0006H     UNIT         ?PR?CONFIGINT?PROB5
+
+
+
+OVERLAY MAP OF MODULE:   prob5 (PROB5)
+
+
+SEGMENT                             DATA_GROUP 
+  +--> CALLED SEGMENT             START    LENGTH
+-------------------------------------------------
+?C_C51STARTUP                     -----    -----
+  +--> ?PR?MAIN?PROB5
+  +--> ?C_INITSEG
+
+?PR?MAIN?PROB5                    -----    -----
+  +--> ?PR?CONFIGINT?PROB5
+  +--> ?PR?_DISPLAY_NUMBER?PROB5
+
+?PR?_DISPLAY_NUMBER?PROB5         001AH    0004H
+  +--> ?PR?_DELAYSCAN?PROB5
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/03/2023  21:15:41  PAGE 2
+
+
+
+
+SYMBOL TABLE OF MODULE:  prob5 (PROB5)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        PROB5
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  D:0008H         PUBLIC        alpha
+  D:00A8H         PUBLIC        IE
+  C:0180H         PUBLIC        _delayScan
+  C:01A5H         PUBLIC        main
+  C:01B1H         PUBLIC        configInt
+  D:000EH         PUBLIC        count
+  C:0198H         PUBLIC        ISR_Ext0
+  D:0010H         PUBLIC        dig
+  B:0088H.0       PUBLIC        IT0
+  C:011DH         PUBLIC        _display_number
+  -------         PROC          _DELAYSCAN
+  D:0006H         SYMBOL        times
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0180H         LINE#         41
+  C:0180H         LINE#         42
+  C:0180H         LINE#         44
+  C:0197H         LINE#         45
+  -------         ENDPROC       _DELAYSCAN
+  -------         PROC          CONFIGINT
+  C:01B1H         LINE#         10
+  C:01B1H         LINE#         11
+  C:01B1H         LINE#         12
+  C:01B4H         LINE#         13
+  C:01B6H         LINE#         14
+  -------         ENDPROC       CONFIGINT
+  -------         PROC          ISR_EXT0
+  C:0198H         LINE#         18
+  C:019AH         LINE#         20
+  C:01A2H         LINE#         21
+  -------         ENDPROC       ISR_EXT0
+  -------         PROC          _DISPLAY_NUMBER
+  D:001AH         SYMBOL        iNum
+  -------         DO            
+  D:0002H         SYMBOL        i
+  D:001CH         SYMBOL        pos
+  D:001DH         SYMBOL        temp
+  -------         ENDDO         
+  C:011DH         LINE#         25
+  C:0121H         LINE#         26
+  C:0121H         LINE#         28
+  C:0124H         LINE#         29
+  C:0127H         LINE#         30
+  C:0127H         LINE#         31
+  C:0134H         LINE#         32
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/03/2023  21:15:41  PAGE 3
+
+
+  C:0143H         LINE#         34
+  C:0146H         LINE#         35
+  C:014EH         LINE#         37
+  C:0155H         LINE#         38
+  C:015BH         LINE#         39
+  C:0166H         LINE#         40
+  -------         ENDPROC       _DISPLAY_NUMBER
+  -------         PROC          MAIN
+  C:01A5H         LINE#         44
+  C:01A5H         LINE#         45
+  C:01A5H         LINE#         46
+  C:01A8H         LINE#         48
+  C:01A8H         LINE#         49
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        PROB5
+
+  -------         MODULE        ?C?SIDIV
+  C:0092H         PUBLIC        ?C?SIDIV
+  -------         ENDMOD        ?C?SIDIV
+
+  -------         MODULE        ?C?UIDIV
+  C:00C8H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+Program Size: data=31.0 xdata=0 code=439
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
