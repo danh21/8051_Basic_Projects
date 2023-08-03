@@ -13,6 +13,9 @@
 
     - RTOS: use RTOS to handle different tasks at the same time (blinking, light up fade out effect).
 
-    - rotateMotor: use 3 button (forward, backward, stop) to control direction of motor.
+    - ctrlMotor: use 3 button (forward, backward, stop) to control direction of motor.
+
+    - display_led7seg: 
+        + Version 1: uses 4 leds 7-segment and 4 transistors, scans through them and display 0-F sequentially, then repeat.
 
 # Code:
