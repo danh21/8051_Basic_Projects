@@ -1,0 +1,217 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/03/2023  19:38:29  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE giao_tiep_led_don.obj TO giao_tiep_led_don RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  giao_tiep_led_don.obj (GIAO_TIEP_LED_DON)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  giao_tiep_led_don (GIAO_TIEP_LED_DON)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         _DATA_GROUP_
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0051H     UNIT         ?PR?_RUN2DIRECTS?GIAO_TIEP_LED_DON
+            CODE    0054H     0027H     UNIT         ?PR?_DELAY_MS?GIAO_TIEP_LED_DON
+            CODE    007BH     0025H     UNIT         ?PR?_RUNR2L?GIAO_TIEP_LED_DON
+            CODE    00A0H     0025H     UNIT         ?PR?_RUNL2R?GIAO_TIEP_LED_DON
+            CODE    00C5H     001BH     UNIT         ?PR?MAIN?GIAO_TIEP_LED_DON
+            CODE    00E0H     001AH     UNIT         ?PR?_BLINK?GIAO_TIEP_LED_DON
+            CODE    00FAH     001AH     UNIT         ?PR?_INTERLEAVE?GIAO_TIEP_LED_DON
+            CODE    0114H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   giao_tiep_led_don (GIAO_TIEP_LED_DON)
+
+
+SEGMENT                                      DATA_GROUP 
+  +--> CALLED SEGMENT                      START    LENGTH
+----------------------------------------------------------
+?C_C51STARTUP                              -----    -----
+  +--> ?PR?MAIN?GIAO_TIEP_LED_DON
+
+?PR?MAIN?GIAO_TIEP_LED_DON                 -----    -----
+  +--> ?PR?_BLINK?GIAO_TIEP_LED_DON
+  +--> ?PR?_RUNR2L?GIAO_TIEP_LED_DON
+  +--> ?PR?_RUNL2R?GIAO_TIEP_LED_DON
+  +--> ?PR?_INTERLEAVE?GIAO_TIEP_LED_DON
+  +--> ?PR?_RUN2DIRECTS?GIAO_TIEP_LED_DON
+
+?PR?_BLINK?GIAO_TIEP_LED_DON               0008H    0001H
+  +--> ?PR?_DELAY_MS?GIAO_TIEP_LED_DON
+
+?PR?_RUNR2L?GIAO_TIEP_LED_DON              0008H    0002H
+  +--> ?PR?_DELAY_MS?GIAO_TIEP_LED_DON
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/03/2023  19:38:29  PAGE 2
+
+
+?PR?_RUNL2R?GIAO_TIEP_LED_DON              0008H    0002H
+  +--> ?PR?_DELAY_MS?GIAO_TIEP_LED_DON
+
+?PR?_INTERLEAVE?GIAO_TIEP_LED_DON          0008H    0001H
+  +--> ?PR?_DELAY_MS?GIAO_TIEP_LED_DON
+
+?PR?_RUN2DIRECTS?GIAO_TIEP_LED_DON         0008H    0002H
+  +--> ?PR?_DELAY_MS?GIAO_TIEP_LED_DON
+
+
+
+SYMBOL TABLE OF MODULE:  giao_tiep_led_don (GIAO_TIEP_LED_DON)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        GIAO_TIEP_LED_DON
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:00E0H         PUBLIC        _blink
+  C:00C5H         PUBLIC        main
+  C:00A0H         PUBLIC        _runL2R
+  C:007BH         PUBLIC        _runR2L
+  C:00FAH         PUBLIC        _interleave
+  C:005BH         PUBLIC        _delay_ms
+  C:0003H         PUBLIC        _run2directs
+  C:0055H         SYMBOL        L?0058
+  C:0057H         SYMBOL        L?0059
+  -------         PROC          L?0057
+  -------         ENDPROC       L?0057
+  C:0055H         SYMBOL        L?0058
+  C:0057H         SYMBOL        L?0059
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:005BH         LINE#         12
+  C:005BH         LINE#         13
+  C:005BH         LINE#         15
+  C:0065H         LINE#         16
+  C:007AH         LINE#         17
+  -------         ENDPROC       _DELAY_MS
+  -------         PROC          _BLINK
+  D:0008H         SYMBOL        times
+  -------         DO            
+  D:0001H         SYMBOL        i
+  -------         ENDDO         
+  C:00E0H         LINE#         21
+  C:00E2H         LINE#         22
+  C:00E2H         LINE#         24
+  C:00EAH         LINE#         25
+  C:00EAH         LINE#         26
+  C:00EDH         LINE#         27
+  C:00F0H         LINE#         28
+  C:00F3H         LINE#         29
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/03/2023  19:38:29  PAGE 3
+
+
+  C:00F6H         LINE#         30
+  C:00F9H         LINE#         31
+  -------         ENDPROC       _BLINK
+  -------         PROC          _INTERLEAVE
+  D:0008H         SYMBOL        times
+  -------         DO            
+  D:0001H         SYMBOL        i
+  -------         ENDDO         
+  C:00FAH         LINE#         35
+  C:00FCH         LINE#         36
+  C:00FCH         LINE#         38
+  C:0104H         LINE#         39
+  C:0104H         LINE#         40
+  C:0107H         LINE#         41
+  C:010AH         LINE#         42
+  C:010DH         LINE#         43
+  C:0110H         LINE#         44
+  C:0113H         LINE#         45
+  -------         ENDPROC       _INTERLEAVE
+  -------         PROC          _RUNR2L
+  D:0008H         SYMBOL        times
+  -------         DO            
+  D:0009H         SYMBOL        i
+  D:0001H         SYMBOL        j
+  -------         ENDDO         
+  C:007BH         LINE#         49
+  C:007DH         LINE#         50
+  C:007DH         LINE#         52
+  C:0087H         LINE#         53
+  C:0087H         LINE#         54
+  C:0089H         LINE#         55
+  C:0094H         LINE#         56
+  C:0097H         LINE#         57
+  C:009BH         LINE#         58
+  C:009FH         LINE#         59
+  -------         ENDPROC       _RUNR2L
+  -------         PROC          _RUNL2R
+  D:0008H         SYMBOL        times
+  -------         DO            
+  D:0009H         SYMBOL        i
+  D:0001H         SYMBOL        j
+  -------         ENDDO         
+  C:00A0H         LINE#         63
+  C:00A2H         LINE#         64
+  C:00A2H         LINE#         66
+  C:00ACH         LINE#         67
+  C:00ACH         LINE#         68
+  C:00AEH         LINE#         69
+  C:00B9H         LINE#         70
+  C:00BCH         LINE#         71
+  C:00C0H         LINE#         72
+  C:00C4H         LINE#         73
+  -------         ENDPROC       _RUNL2R
+  -------         PROC          _RUN2DIRECTS
+  D:0008H         SYMBOL        times
+  -------         DO            
+  D:0009H         SYMBOL        i
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/03/2023  19:38:29  PAGE 4
+
+
+  D:0001H         SYMBOL        j
+  -------         ENDDO         
+  C:0003H         LINE#         77
+  C:0005H         LINE#         78
+  C:0005H         LINE#         80
+  C:000FH         LINE#         81
+  C:000FH         LINE#         82
+  C:0011H         LINE#         83
+  C:0028H         LINE#         84
+  C:002BH         LINE#         85
+  C:002FH         LINE#         86
+  C:0031H         LINE#         87
+  C:0048H         LINE#         88
+  C:004BH         LINE#         89
+  C:004FH         LINE#         90
+  C:0053H         LINE#         91
+  -------         ENDPROC       _RUN2DIRECTS
+  -------         PROC          MAIN
+  C:00C5H         LINE#         95
+  C:00C5H         LINE#         96
+  C:00C5H         LINE#         97
+  C:00C5H         LINE#         98
+  C:00C5H         LINE#         99
+  C:00CAH         LINE#         100
+  C:00CFH         LINE#         101
+  C:00D4H         LINE#         102
+  C:00D9H         LINE#         103
+  C:00DEH         LINE#         104
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        GIAO_TIEP_LED_DON
+
+Program Size: data=11.0 xdata=0 code=288
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

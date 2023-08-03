@@ -8,5 +8,6 @@
 # Source: 
     - Led_effect: 
         + Version 1: uses switches to turn on/off leds.
+        + Version 2: creates some effects of leds as blinking, interleave, run led from left to right...
 
 # Code:
