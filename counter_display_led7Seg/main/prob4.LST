@@ -1,0 +1,56 @@
+C51 COMPILER V9.01   PROB4                                                                 08/03/2023 20:58:35 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE PROB4
+OBJECT MODULE PLACED IN prob4.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE prob4.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include "7Seg4Dig_Anode.h"
+   3          
+   4          
+   5          
+   6          void main()
+   7          {
+   8   1              int thousands, hundreds, dozens, units, i;
+   9   1                      
+  10   1              while(1) {
+  11   2                      for (thousands = 0; thousands < 10; thousands++)
+  12   2                      for (hundreds = 0; hundreds < 10; hundreds++)
+  13   2                      for (dozens = 0; dozens < 10; dozens++)
+  14   2                      for (units = 0; units < 10; units++)
+  15   2                      for (i = 100; i > 0; i--) {
+  16   3                              Led7Seg_scan = led7seg_dig4;            
+  17   3                              Led7Seg_data = dig[units];                      
+  18   3                              delayScan(200);
+  19   3      
+  20   3                              Led7Seg_scan = led7seg_dig3;                    
+  21   3                              Led7Seg_data = dig[dozens];
+  22   3                              delayScan(200);
+  23   3      
+  24   3                              Led7Seg_scan = led7seg_dig2;            
+  25   3                              Led7Seg_data = dig[hundreds];
+  26   3                              delayScan(200);
+  27   3      
+  28   3                              Led7Seg_scan = led7seg_dig1;            
+  29   3                              Led7Seg_data = dig[thousands];
+  30   3                              delayScan(200);
+  31   3                      }
+  32   2              }
+  33   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    183    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     16       6
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

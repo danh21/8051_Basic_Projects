@@ -43,7 +43,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\</OutputDirectory>
-          <OutputName>prob4_3</OutputName>
+          <OutputName>prob4</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
@@ -347,9 +347,9 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
-              <FileName>prob4_3.c</FileName>
+              <FileName>prob4.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\prob4_3.c</FilePath>
+              <FilePath>.\prob4.c</FilePath>
             </File>
           </Files>
         </Group>
