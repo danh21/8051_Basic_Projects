@@ -34,6 +34,9 @@
 
     - switchDisplay_LCD_Led7Seg: uses switch button to toggle display. If LCD is on/off, 7-segment is off/on.
 
+    - display_LCD: 
+        + Version 1: uses LCD to display information, float number, integer counter.
+
 # Code:
     - Modify pin connection of devices in libraries if necessary:
         + LCD_16x2_4bit.h 
