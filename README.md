@@ -13,4 +13,6 @@
 
     - RTOS: use RTOS to handle different tasks at the same time (blinking, light up fade out effect).
 
+    - rotateMotor: use 3 button (forward, backward, stop) to control direction of motor.
+
 # Code:
