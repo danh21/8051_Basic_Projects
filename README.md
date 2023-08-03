@@ -26,6 +26,7 @@
         + Version 2: counts up and counts down, displays on led 7-segment and turns on leds by dozens value.
         + Version 3: displays on led 7-segment from 0000 to 9999 and repeats.
         + Version 4: displays on led 7-segment from 00000000 to 99999999 and repeats.
+        + Version 5: uses buttons (as keypad) to create interrupt, then handle data and display on led 7-segment.
     
     - Traffic_Lights: simulates traffic lights at intersections.
 
