@@ -1,19 +1,33 @@
-#include <REGX51.H>
+#include <at89x51.h>
 
 
 
-#define leds P2
+#define leds P1
 
 #define uint unsigned int
 #define uchar unsigned char
 
 
 
-void delay_ms(uint ms) 
+void delay_hardware_50ms()
+{	
+	TMOD = 0x01;						// 16-bit timer0 (0 - 65535)
+	ET0 = 0;							// no interrupt
+	TH0 = 0x3C;							// 0x3CB0 ~ 15536 -> 65535-15536+1 = 50000us = 50ms	
+	TL0 = 0xB0;							
+	TF0 = 0; 							// clear overflow flag	
+	TR0 = 1; 							// start timer0
+	while (TF0 == 0);					// wait until overflow
+	TR0 = 0; 							// stop timer0	
+}
+
+
+
+void delay_ms(int ms)
 {
-	uint i, j;
-	for (i = 0; i < ms; i++)
-		for (j = 0; j < 123; j++);
+	int i;
+	for (i = 0; i < ms/50; i++)	   	
+		delay_hardware_50ms();
 }
 
 
@@ -96,7 +110,7 @@ void main()
 { 
 	while (1)
 	{ 
-		blink(3);
+		blink(5);
 		runR2L(1);
 		runL2R(1);		
 		interleave(3);

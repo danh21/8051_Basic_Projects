@@ -1,0 +1,146 @@
+C51 COMPILER V9.01   PROB6                                                                 08/03/2023 20:00:19 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE PROB6
+OBJECT MODULE PLACED IN prob6.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE prob6.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <at89x51.h>
+   2          
+   3          
+   4          
+   5          #define leds P1
+   6          
+   7          #define uint unsigned int
+   8          #define uchar unsigned char
+   9          
+  10          
+  11          
+  12          void delay_hardware_50ms()
+  13          {       
+  14   1              TMOD = 0x01;                                            // 16-bit timer0 (0 - 65535)
+  15   1              ET0 = 0;                                                        // no interrupt
+  16   1              TH0 = 0x3C;                                                     // 0x3CB0 ~ 15536 -> 65535-15536+1 = 50000us = 50ms     
+  17   1              TL0 = 0xB0;                                                     
+  18   1              TF0 = 0;                                                        // clear overflow flag  
+  19   1              TR0 = 1;                                                        // start timer0
+  20   1              while (TF0 == 0);                                       // wait until overflow
+  21   1              TR0 = 0;                                                        // stop timer0  
+  22   1      }
+  23          
+  24          
+  25          
+  26          void delay_ms(int ms)
+  27          {
+  28   1              int i;
+  29   1              for (i = 0; i < ms/50; i++)             
+  30   1                      delay_hardware_50ms();
+  31   1      }
+  32          
+  33          
+  34          
+  35          void blink(uchar times)             
+  36          {
+  37   1              uchar i;
+  38   1              for (i = 0; i < times; i++)
+  39   1              {
+  40   2                      leds = 0xFF;    
+  41   2                      delay_ms(500);
+  42   2                      leds = 0;               
+  43   2                      delay_ms(500);
+  44   2              }
+  45   1      }
+  46          
+  47          
+  48          
+  49          void interleave(uchar times)
+  50          {
+  51   1              uchar i;                                                  
+  52   1              for (i = 0; i < times; i++)
+  53   1              {
+  54   2                      leds = 0x55; 
+  55   2                      delay_ms(500);                          //01010101
+C51 COMPILER V9.01   PROB6                                                                 08/03/2023 20:00:19 PAGE 2   
+
+  56   2                      leds = 0xAA; 
+  57   2                      delay_ms(500);                  //10101010
+  58   2              }
+  59   1      }
+  60          
+  61          
+  62          
+  63          void runR2L(uchar times)                        // right to left
+  64          {
+  65   1              uchar i, j;
+  66   1              for (i = 0; i < times; i++)
+  67   1              {
+  68   2                      for (j = 0; j < 8; j++) {
+  69   3                              leds = (1 << j);
+  70   3                              delay_ms(500);
+  71   3                      }
+  72   2              }
+  73   1      }
+  74          
+  75          
+  76          
+  77          void runL2R(uchar times)                        // left to right                         
+  78          {
+  79   1              uchar i, j;
+  80   1              for (i = 0; i < times; i++)
+  81   1              {
+  82   2                      for (j = 0; j < 8; j++) {
+  83   3                              leds = (0x80 >> j);
+  84   3                              delay_ms(500);
+  85   3                      }
+  86   2              }
+  87   1      }
+  88          
+  89          
+  90          
+  91          void run2directs(uchar times)
+  92          {
+  93   1              uchar i, j;
+  94   1              for (i = 0; i < times; i++)
+  95   1              {
+  96   2                      for (j = 0; j < 4; j++) {
+  97   3                              leds = (0x80 >> j) | (1 << j);
+  98   3                              delay_ms(500);
+  99   3                      }
+ 100   2                      for (j = 1; j < 4; j++) {
+ 101   3                              leds = (0x08 >> j) | (0x10 << j);
+ 102   3                              delay_ms(500);
+ 103   3                      }
+ 104   2              }
+ 105   1      }
+ 106          
+ 107          
+ 108          
+ 109          void main()                                                               
+ 110          { 
+ 111   1              while (1)
+ 112   1              { 
+ 113   2                      blink(5);
+ 114   2                      runR2L(1);
+ 115   2                      runL2R(1);              
+ 116   2                      interleave(3);
+ 117   2                      run2directs(1);
+C51 COMPILER V9.01   PROB6                                                                 08/03/2023 20:00:19 PAGE 3   
+
+ 118   2              }
+ 119   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    300    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       8
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
