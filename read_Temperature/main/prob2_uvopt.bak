@@ -25,7 +25,7 @@
     <ToolsetNumber>0x0</ToolsetNumber>
     <ToolsetName>MCS-51</ToolsetName>
     <TargetOption>
-      <CLK51>24000000</CLK51>
+      <CLK51>12000000</CLK51>
       <OPTTT>
         <gFlags>1</gFlags>
         <BeepAtEnd>1</BeepAtEnd>
@@ -80,7 +80,7 @@
         <Book>
           <Number>0</Number>
           <Title>Data Sheet</Title>
-          <Path>DATASHTS\ATMEL\AT89C52_DS.PDF</Path>
+          <Path>DATASHTS\ATMEL\AT89C51_DS.PDF</Path>
         </Book>
         <Book>
           <Number>1</Number>
@@ -92,11 +92,11 @@
         <SimDllName>S8051.DLL</SimDllName>
         <SimDllArguments></SimDllArguments>
         <SimDlgDllName>DP51.DLL</SimDlgDllName>
-        <SimDlgDllArguments>-p52</SimDlgDllArguments>
+        <SimDlgDllArguments>-p51</SimDlgDllArguments>
         <TargetDllName>S8051.DLL</TargetDllName>
         <TargetDllArguments></TargetDllArguments>
         <TargetDlgDllName>TP51.DLL</TargetDlgDllName>
-        <TargetDlgDllArguments>-p52</TargetDlgDllArguments>
+        <TargetDlgDllArguments>-p51</TargetDlgDllArguments>
       </DllOpt>
       <DebugOpt>
         <uSim>1</uSim>
@@ -130,23 +130,6 @@
         <tIfile></tIfile>
         <pMon></pMon>
       </DebugOpt>
-      <Breakpoint>
-        <Bp>
-          <Number>0</Number>
-          <Type>0</Type>
-          <LineNumber>60</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>main.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-      </Breakpoint>
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
@@ -189,13 +172,13 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>15</ColumnNumber>
+      <ColumnNumber>44</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>33</TopLine>
-      <CurrentLine>33</CurrentLine>
+      <TopLine>15</TopLine>
+      <CurrentLine>15</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\main.c</PathWithFileName>
-      <FilenameWithoutPath>main.c</FilenameWithoutPath>
+      <PathWithFileName>.\prob2.c</PathWithFileName>
+      <FilenameWithoutPath>prob2.c</FilenameWithoutPath>
     </File>
   </Group>
 
@@ -1543,10 +1526,10 @@
       <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
-          <Name>.\main.c</Name>
-          <ColumnNumber>15</ColumnNumber>
-          <TopLine>33</TopLine>
-          <CurrentLine>33</CurrentLine>
+          <Name>.\prob2.c</Name>
+          <ColumnNumber>44</ColumnNumber>
+          <TopLine>15</TopLine>
+          <CurrentLine>15</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

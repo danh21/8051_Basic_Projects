@@ -1,0 +1,150 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        07/17/2023  12:52:18  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE prob2.obj TO prob2
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  prob2.obj (PROB2)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  prob2 (PROB2)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000AH     UNIT         ?DT?PROB2
+            DATA    0012H     0003H     UNIT         _DATA_GROUP_
+            IDATA   0015H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     008CH     UNIT         ?C_C51STARTUP
+            CODE    008FH     006CH     UNIT         ?PR?MAIN?PROB2
+            CODE    00FBH     001FH     UNIT         ?PR?_DELAY_SCANDIG?PROB2
+            CODE    011AH     001AH     UNIT         ?PR?_ADC0808_READ?PROB2
+            CODE    0134H     000DH     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   prob2 (PROB2)
+
+
+SEGMENT                            DATA_GROUP 
+  +--> CALLED SEGMENT            START    LENGTH
+------------------------------------------------
+?C_C51STARTUP                    -----    -----
+  +--> ?PR?MAIN?PROB2
+  +--> ?C_INITSEG
+
+?PR?MAIN?PROB2                   0012H    0003H
+  +--> ?PR?_DELAY_SCANDIG?PROB2
+  +--> ?PR?_ADC0808_READ?PROB2
+
+
+
+SYMBOL TABLE OF MODULE:  prob2 (PROB2)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        PROB2
+  C:0000H         SYMBOL        _ICE_DUMMY_
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/17/2023  12:52:18  PAGE 2
+
+
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:0090H.6       PUBLIC        ADC0808_START
+  B:0090H.4       PUBLIC        ADC0808_OE
+  C:011AH         PUBLIC        _ADC0808_read
+  C:008FH         PUBLIC        main
+  C:0102H         PUBLIC        _delay_scanDig
+  D:0008H         PUBLIC        dig
+  B:0090H.3       PUBLIC        ADC0808_A
+  B:0090H.2       PUBLIC        ADC0808_B
+  B:0090H.1       PUBLIC        ADC0808_C
+  B:0090H.0       PUBLIC        ADC0808_ALE
+  -------         PROC          _ADC0808_READ
+  D:0007H         SYMBOL        channel
+  C:011AH         LINE#         31
+  C:011AH         LINE#         32
+  C:011EH         LINE#         33
+  C:0123H         LINE#         34
+  C:0127H         LINE#         36
+  C:0129H         LINE#         37
+  C:012BH         LINE#         39
+  C:012DH         LINE#         40
+  C:012FH         LINE#         42
+  C:0131H         LINE#         43
+  C:0133H         LINE#         44
+  -------         ENDPROC       _ADC0808_READ
+  -------         PROC          L?0014
+  -------         ENDPROC       L?0014
+  -------         PROC          _DELAY_SCANDIG
+  D:0006H         SYMBOL        times
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0102H         LINE#         38
+  C:0102H         LINE#         39
+  C:0102H         LINE#         41
+  C:0119H         LINE#         42
+  -------         ENDPROC       _DELAY_SCANDIG
+  -------         PROC          MAIN
+  -------         DO            
+  D:0003H         SYMBOL        channel
+  D:0001H         SYMBOL        temp
+  D:0012H         SYMBOL        hundreds
+  D:0013H         SYMBOL        dozens
+  D:0014H         SYMBOL        units
+  D:0002H         SYMBOL        i
+  -------         ENDDO         
+  C:008FH         LINE#         7
+  C:008FH         LINE#         8
+  C:008FH         LINE#         11
+  C:0091H         LINE#         12
+  C:0091H         LINE#         13
+  C:0093H         LINE#         14
+  C:0093H         LINE#         15
+  C:0096H         LINE#         16
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/17/2023  12:52:18  PAGE 3
+
+
+  C:009DH         LINE#         17
+  C:00A0H         LINE#         18
+  C:00A7H         LINE#         20
+  C:00AEH         LINE#         22
+  C:00B5H         LINE#         23
+  C:00C1H         LINE#         24
+  C:00C9H         LINE#         26
+  C:00CCH         LINE#         27
+  C:00D4H         LINE#         28
+  C:00D7H         LINE#         29
+  C:00DCH         LINE#         31
+  C:00DFH         LINE#         32
+  C:00E3H         LINE#         33
+  C:00E3H         LINE#         34
+  C:00E6H         LINE#         36
+  C:00E9H         LINE#         37
+  C:00EDH         LINE#         38
+  C:00EDH         LINE#         39
+  C:00F0H         LINE#         40
+  C:00F4H         LINE#         41
+  C:00FAH         LINE#         42
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        PROB2
+
+Program Size: data=22.0 xdata=0 code=321
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
