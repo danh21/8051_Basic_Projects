@@ -17,5 +17,6 @@
 
     - display_led7seg: 
         + Version 1: uses 4 leds 7-segment and 4 transistors, scans through them and display 0-F sequentially, then repeat.
+        + Version 2: user presses key, then one of characters in range of 0-F is displayed on led 7-segment.
 
 # Code:
