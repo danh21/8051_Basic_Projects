@@ -39,6 +39,8 @@
         + Version 2: uses keypad to enter character, then displays data on LCD.
         + Version 3: uses button (to create an interrupt) to count up, display running string and counter on LCD.
 
+    - memory_communication: writes data into external RAM, then reads data from RAM and displays on LCD.
+
 # Code:
     - Modify pin connection of devices in libraries if necessary:
         + LCD_16x2_4bit.h 
