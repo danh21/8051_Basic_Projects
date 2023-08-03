@@ -1,0 +1,177 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/01/2023  09:22:58  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE Traffic_Lights.obj TO Traffic_Lights
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Traffic_Lights.obj (TRAFFIC_LIGHTS)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  Traffic_Lights (TRAFFIC_LIGHTS)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0015H     UNIT         ?DT?TRAFFIC_LIGHTS
+            DATA    001DH     0002H     UNIT         _DATA_GROUP_
+            IDATA   001FH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     008CH     UNIT         ?C_C51STARTUP
+            CODE    008FH     0059H     UNIT         ?PR?DISPLAYCOUNT?TRAFFIC_LIGHTS
+            CODE    00E8H     0054H     UNIT         ?PR?MAIN?TRAFFIC_LIGHTS
+            CODE    013CH     001EH     UNIT         ?C_INITSEG
+            CODE    015AH     001CH     UNIT         ?PR?_DELAYSCAN?TRAFFIC_LIGHTS
+
+
+
+OVERLAY MAP OF MODULE:   Traffic_Lights (TRAFFIC_LIGHTS)
+
+
+SEGMENT                                   DATA_GROUP 
+  +--> CALLED SEGMENT                   START    LENGTH
+-------------------------------------------------------
+?C_C51STARTUP                           -----    -----
+  +--> ?PR?MAIN?TRAFFIC_LIGHTS
+  +--> ?C_INITSEG
+
+?PR?MAIN?TRAFFIC_LIGHTS                 -----    -----
+  +--> ?PR?DISPLAYCOUNT?TRAFFIC_LIGHTS
+
+?PR?DISPLAYCOUNT?TRAFFIC_LIGHTS         001DH    0002H
+  +--> ?PR?_DELAYSCAN?TRAFFIC_LIGHTS
+
+
+
+SYMBOL TABLE OF MODULE:  Traffic_Lights (TRAFFIC_LIGHTS)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/01/2023  09:22:58  PAGE 2
+
+
+  -------         MODULE        TRAFFIC_LIGHTS
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  C:008FH         PUBLIC        displayCount
+  D:0008H         PUBLIC        alpha
+  D:000EH         PUBLIC        timerGreen
+  C:015EH         PUBLIC        _delayScan
+  D:000FH         PUBLIC        timerYellow
+  C:00E8H         PUBLIC        main
+  D:0010H         PUBLIC        dig
+  D:001AH         PUBLIC        timerRed
+  B:0080H.2       PUBLIC        green1
+  B:0080H.5       PUBLIC        green2
+  B:0080H.1       PUBLIC        yellow1
+  B:0080H.4       PUBLIC        yellow2
+  D:001BH         PUBLIC        timer1
+  D:001CH         PUBLIC        timer2
+  B:0080H.0       PUBLIC        red1
+  B:0080H.3       PUBLIC        red2
+  C:015AH         SYMBOL        L?0026
+  -------         PROC          L?0025
+  -------         ENDPROC       L?0025
+  C:015AH         SYMBOL        L?0026
+  -------         PROC          _DELAYSCAN
+  D:0006H         SYMBOL        times
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:015EH         LINE#         41
+  C:015EH         LINE#         42
+  C:015EH         LINE#         44
+  C:0175H         LINE#         45
+  -------         ENDPROC       _DELAYSCAN
+  -------         PROC          DISPLAYCOUNT
+  -------         DO            
+  D:001DH         SYMBOL        dozens1
+  D:001EH         SYMBOL        units1
+  D:0001H         SYMBOL        dozens2
+  D:0003H         SYMBOL        units2
+  D:0002H         SYMBOL        i
+  -------         ENDDO         
+  C:008FH         LINE#         18
+  C:008FH         LINE#         19
+  C:008FH         LINE#         22
+  C:0097H         LINE#         23
+  C:00A0H         LINE#         24
+  C:00A7H         LINE#         25
+  C:00AFH         LINE#         27
+  C:00B1H         LINE#         28
+  C:00B1H         LINE#         29
+  C:00B4H         LINE#         30
+  C:00BCH         LINE#         31
+  C:00C3H         LINE#         33
+  C:00C6H         LINE#         34
+  C:00CAH         LINE#         35
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/01/2023  09:22:58  PAGE 3
+
+
+  C:00CDH         LINE#         37
+  C:00D0H         LINE#         38
+  C:00D3H         LINE#         39
+  C:00D6H         LINE#         41
+  C:00D9H         LINE#         42
+  C:00DCH         LINE#         43
+  C:00DFH         LINE#         44
+  C:00E3H         LINE#         46
+  C:00E5H         LINE#         47
+  C:00E7H         LINE#         48
+  -------         ENDPROC       DISPLAYCOUNT
+  -------         PROC          MAIN
+  C:00E8H         LINE#         52
+  C:00E8H         LINE#         53
+  C:00E8H         LINE#         54
+  C:00F4H         LINE#         56
+  C:00F4H         LINE#         57
+  C:00F4H         LINE#         58
+  C:00F7H         LINE#         59
+  C:00F9H         LINE#         60
+  C:00FCH         LINE#         61
+  C:00FEH         LINE#         62
+  C:00FEH         LINE#         63
+  C:0101H         LINE#         64
+  C:0105H         LINE#         65
+  C:0107H         LINE#         67
+  C:010AH         LINE#         68
+  C:010CH         LINE#         69
+  C:010CH         LINE#         70
+  C:010FH         LINE#         71
+  C:0113H         LINE#         72
+  C:0115H         LINE#         73
+  C:0117H         LINE#         75
+  C:011AH         LINE#         76
+  C:011CH         LINE#         77
+  C:011FH         LINE#         78
+  C:0121H         LINE#         79
+  C:0121H         LINE#         80
+  C:0124H         LINE#         81
+  C:0128H         LINE#         82
+  C:012AH         LINE#         84
+  C:012DH         LINE#         85
+  C:012FH         LINE#         86
+  C:012FH         LINE#         87
+  C:0132H         LINE#         88
+  C:0136H         LINE#         89
+  C:0138H         LINE#         90
+  C:013AH         LINE#         91
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        TRAFFIC_LIGHTS
+
+Program Size: data=32.0 xdata=0 code=374
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

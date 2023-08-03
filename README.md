@@ -26,5 +26,20 @@
         + Version 2: counts up and counts down, displays on led 7-segment and turns on leds by dozens value.
         + Version 3: displays on led 7-segment from 0000 to 9999 and repeats.
         + Version 4: displays on led 7-segment from 00000000 to 99999999 and repeats.
+    
+    - Traffic_Lights: simulates traffic lights at intersections.
 
 # Code:
+    - Modify pin connection of devices in libraries if necessary:
+        + LCD_16x2_4bit.h 
+        + LCD_16x2_8bit.h  
+        + Keypad_4x3.h
+        + Keypad_4x4.h
+        + 7Seg2Dig_Anode.h
+        + 7Seg4Dig_Anode.h
+        + 7Seg8Dig_Anode.h
+        + ADC0808.h
+
+    - Modify keys by requirement:
+        + Keypad_4x3.h
+        + Keypad_4x4.h
