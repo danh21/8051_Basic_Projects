@@ -1,0 +1,20 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\cd\8051\Project\C\8051_Basic_Projects\counter_display_led7Seg\main\prob4_3.uvproj
+Project File Date:  11/10/2021
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling prob4_3.c...
+PROB4_3.C(24): warning C206: 'delay_scanDig': missing function-prototype
+PROB4_3.C(24): error C267: 'delay_scanDig': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling prob4_3.c...
+linking...
+Program Size: data=27.0 xdata=0 code=408
+creating hex file from "prob4_3"...
+"prob4_3" - 0 Error(s), 0 Warning(s).

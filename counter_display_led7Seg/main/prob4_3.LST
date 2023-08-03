@@ -1,0 +1,83 @@
+C51 COMPILER V9.01   PROB4_3                                                               08/03/2023 20:53:45 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE PROB4_3
+OBJECT MODULE PLACED IN prob4_3.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE prob4_3.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include "7Seg2Dig_Anode.h"
+   3          
+   4          
+   5          
+   6          #define LEDs P2
+   7          
+   8          
+   9          
+  10          void main() {
+  11   1              int units, dozens, i;   
+  12   1              LEDs = 0xFF;                                                                    // off
+  13   1      
+  14   1              while(1) {
+  15   2                      /* COUNT UP */                                     
+  16   2                      for (dozens = 0; dozens < 10; dozens++) {
+  17   3                              for (units = 0; units < 10; units++) {
+  18   4                                      if (dozens == 9 && units == 1)          // 91 -> count down
+  19   4                                              break;
+  20   4                                                      
+  21   4                                      for (i = 100; i > 0; i--) {
+  22   5                                              Led7Seg_scan = led7seg_dig2;                    
+  23   5                                              Led7Seg_data = dig[units];                      
+  24   5                                              delayScan(200);
+  25   5                      
+  26   5                                              Led7Seg_scan = led7seg_dig1;            
+  27   5                                              Led7Seg_data = dig[dozens];
+  28   5                                              delayScan(200);
+  29   5                                      }                       
+  30   4                              }
+  31   3      
+  32   3                              LEDs <<= 1;                                                             // turn on led gradually
+  33   3                      }
+  34   2      
+  35   2                      /* COUNT DOWN */                
+  36   2                      for (dozens = 8; dozens >= 0; dozens--) {                                               
+  37   3                              if (dozens == 7)                                                // turn off led gradually
+  38   3                                      LEDs = 0x80;                                            
+  39   3                              else if (dozens < 7)
+  40   3                                      LEDs |= (LEDs >> 1);                            
+  41   3                              
+  42   3                              for (units = 9; units >= 0; units--) {                          
+  43   4                                      for (i = 100; i > 0; i--) {
+  44   5                                              Led7Seg_scan = led7seg_dig2;            
+  45   5                                              Led7Seg_data = dig[units];                      
+  46   5                                              delayScan(200);
+  47   5                      
+  48   5                                              Led7Seg_scan = led7seg_dig1;                    
+  49   5                                              Led7Seg_data = dig[dozens];
+  50   5                                              delayScan(200);
+  51   5                                      }
+  52   4      
+  53   4                                      if (dozens == 0 && units == 0)          // 00 -> count up 
+  54   4                                              break;  
+  55   4                              }
+C51 COMPILER V9.01   PROB4_3                                                               08/03/2023 20:53:45 PAGE 2   
+
+  56   3                      }
+  57   2              }
+  58   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    244    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     16       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
