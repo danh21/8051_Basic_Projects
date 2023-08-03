@@ -24,5 +24,7 @@
     - counter_display_led7seg:
         + Version 1: uses BCD-to-7-Segment decoder to decode, displays on led 7-segment from 0 to 9 and repeats.
         + Version 2: counts up and counts down, displays on led 7-segment and turns on leds by dozens value.
+        + Version 3: displays on led 7-segment from 0000 to 9999 and repeats.
+        + Version 4: displays on led 7-segment from 00000000 to 99999999 and repeats.
 
 # Code:
