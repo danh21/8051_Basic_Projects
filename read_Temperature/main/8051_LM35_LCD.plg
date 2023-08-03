@@ -1,0 +1,44 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\cd\8051\Project\C\8051_Basics\readTemp_displayLCD_usingADC\main\8051_LM35_LCD.uvproj
+Project File Date:  08/11/2022
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+main.c(2): warning C318: can't open file 'LCD_16x2.h'
+MAIN.C(31): warning C206: 'lcd_sendStr': missing function-prototype
+MAIN.C(31): error C267: 'lcd_sendStr': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(30): warning C280: 'channel': unreferenced local variable
+MAIN.C(57): warning C209: '_displayTemp': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_OFFSCREEN?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_BLINKCUR?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_OFF_BLINKCUR?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_SENDFLOAT?MAIN
+Program Size: data=54.1 xdata=0 code=2611
+creating hex file from "8051_LM35_LCD"...
+"8051_LM35_LCD" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_OFFSCREEN?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_BLINKCUR?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_OFF_BLINKCUR?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_SENDFLOAT?MAIN
+Program Size: data=54.1 xdata=0 code=2611
+creating hex file from "8051_LM35_LCD"...
+"8051_LM35_LCD" - 0 Error(s), 4 Warning(s).

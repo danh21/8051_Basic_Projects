@@ -41,6 +41,9 @@
 
     - memory_communication: writes data into external RAM, then reads data from RAM and displays on LCD.
 
+    - read_Temperature: 
+        + Version 1: uses ADC0808 to read temperature from LM35 sensor, then displays data on LCD.
+
 # Code:
     - Modify pin connection of devices in libraries if necessary:
         + LCD_16x2_4bit.h 
