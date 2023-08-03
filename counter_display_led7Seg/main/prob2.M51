@@ -1,0 +1,94 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        07/14/2023  15:54:11  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE code.obj TO prob2
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  code.obj (CODE)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?ULCMP)
+
+
+LINK MAP OF MODULE:  prob2 (CODE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000AH     UNIT         _DATA_GROUP_
+            IDATA   0012H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     003FH     UNIT         ?PR?_DELAY?CODE
+            CODE    0042H     002BH     UNIT         ?PR?MAIN?CODE
+            CODE    006DH     0011H     UNIT         ?C?LIB_CODE
+            CODE    007EH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   prob2 (CODE)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?CODE
+
+?PR?MAIN?CODE                  0008H    0002H
+  +--> ?PR?_DELAY?CODE
+
+?PR?_DELAY?CODE                000AH    0008H
+
+
+
+SYMBOL TABLE OF MODULE:  prob2 (CODE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        CODE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0003H         PUBLIC        _delay
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/14/2023  15:54:11  PAGE 2
+
+
+  C:0042H         PUBLIC        main
+  -------         PROC          _DELAY
+  D:000AH         SYMBOL        time
+  -------         DO            
+  D:000EH         SYMBOL        i
+  -------         ENDDO         
+  C:0003H         LINE#         5
+  C:000BH         LINE#         7
+  C:0041H         LINE#         8
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        value
+  -------         ENDDO         
+  C:0042H         LINE#         12
+  C:0042H         LINE#         13
+  C:0047H         LINE#         14
+  C:0054H         LINE#         15
+  C:005FH         LINE#         16
+  C:006AH         LINE#         17
+  C:006CH         LINE#         18
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        CODE
+
+  -------         MODULE        ?C?ULCMP
+  C:006DH         PUBLIC        ?C?ULCMP
+  -------         ENDMOD        ?C?ULCMP
+
+Program Size: data=19.0 xdata=0 code=138
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

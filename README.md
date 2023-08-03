@@ -21,4 +21,7 @@
 
     - PWM: use timer and PWM principle to control led light up fade out.
 
+    - counter_display_led7seg:
+        + Version 1: use BCD-to-7-Segment decoder to decode, display on led 7-segment from 0 to 9 and repeat.
+
 # Code:
