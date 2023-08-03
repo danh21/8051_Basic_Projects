@@ -18,6 +18,7 @@
     - display_led7seg: 
         + Version 1: uses 4 leds 7-segment and 4 transistors, scans through them and display 0-F sequentially, then repeat.
         + Version 2: user presses key, then one of characters in range of 0-F is displayed on led 7-segment.
+        + Version 3: uses buttons (as keypad) to create interrupt, then handles data and displays on led 7-segment.
 
     - PWM: use timer and PWM principle to control led light up fade out.
 
@@ -29,6 +30,8 @@
         + Version 5: uses button (to create an interrupt) to count up, displays value on led 7-segment.
     
     - Traffic_Lights: simulates traffic lights at intersections.
+
+    - switchDisplay_LCD_Led7Seg: uses switch button to toggle display. If LCD is on/off, 7-segment is off/on.
 
 # Code:
     - Modify pin connection of devices in libraries if necessary:

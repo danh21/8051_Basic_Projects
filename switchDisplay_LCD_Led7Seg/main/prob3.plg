@@ -1,0 +1,21 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\cd\8051\Project\C\8051_Basic_Projects\switchDisplay_LCD_7Seg8Dig\main\prob3.uvproj
+Project File Date:  08/09/2022
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling prob3.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_BLINKCUR?PROB3
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_OFF_BLINKCUR?PROB3
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_SENDFLOAT?PROB3
+Program Size: data=77.1 xdata=0 code=2832
+creating hex file from "prob3"...
+"prob3" - 0 Error(s), 3 Warning(s).
