@@ -1,0 +1,86 @@
+C51 COMPILER V9.01   PROB2                                                                 07/12/2023 22:31:17 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE PROB2
+OBJECT MODULE PLACED IN prob2.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE prob2.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg51.h>                                      
+   2          #include "LCD_16x2_4bit.h"
+   3          
+   4          
+   5          
+   6          uint count = 0;  
+   7          
+   8          // code - constant
+   9          uchar code string[]     = "COMPUTER ENGINEERING TECHNOLOGY - HCMC UNIVERSITY OF TECHNOLOGY AND EDUCATION. ";    
+  10          
+  11          
+  12          
+  13          void configTimer()
+  14          {
+  15   1              TMOD = 0x05;                            // select counter mode for 16-bit timer0 
+  16   1              TR0 = 1;                                        // start timer0
+  17   1              TH0 = 0xFF;                                     // higher byte                                                                                                                  
+  18   1              TL0 = 0xFF;                                 // lower byte       
+  19   1      }
+  20          
+  21          void configInt()
+  22          {
+  23   1              IE = 0x82;                                      // enable global and timer0 interrupt   
+  24   1      }
+  25          
+  26          void ISR_Timer0() interrupt 1   // ISR for counter
+  27          {
+  28   1              count++;        
+  29   1              TH0 = 0xFF;                                                                                                                                     
+  30   1              TL0 = 0xFF;                     
+  31   1      }
+  32          
+  33          
+  34          
+  35          void main (void)
+  36          {
+  37   1              uchar i, traversal = 0, start = 0;
+  38   1              
+  39   1              configTimer();
+  40   1              configInt();
+  41   1      
+  42   1              lcd_init();
+  43   1      
+  44   1              while (1)                                       
+  45   1              {
+  46   2                      lcd_movCur(2, 1);
+  47   2                      lcd_sendInt(count);
+  48   2      
+  49   2                      lcd_movCur(1, 1);
+  50   2                      traversal = start;
+  51   2                      for (i = 0; i < LCD_numOfCols; i++) {
+  52   3                              lcd_sendData(string[traversal++]);
+  53   3                              if (traversal == sizeof(string)/sizeof(uchar) - 1)      // NULL
+  54   3                                      traversal = 0;                                                  
+  55   3                      }
+C51 COMPILER V9.01   PROB2                                                                 07/12/2023 22:31:17 PAGE 2   
+
+  56   2                      if (start++ == sizeof(string)/sizeof(uchar) - 1)                // NULL
+  57   2                                      start = 0;
+  58   2      
+  59   2                      delay_ms(100);
+  60   2              }
+  61   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    542    ----
+   CONSTANT SIZE    =     80    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2      32
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
