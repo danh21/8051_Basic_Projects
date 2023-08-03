@@ -172,13 +172,13 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>50</ColumnNumber>
+      <ColumnNumber>6</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>21</CurrentLine>
+      <TopLine>15</TopLine>
+      <CurrentLine>23</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\ma_tran_ban_phim.c</PathWithFileName>
-      <FilenameWithoutPath>ma_tran_ban_phim.c</FilenameWithoutPath>
+      <PathWithFileName>.\main.c</PathWithFileName>
+      <FilenameWithoutPath>main.c</FilenameWithoutPath>
     </File>
   </Group>
 
@@ -1526,10 +1526,10 @@
       <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
-          <Name>.\ma_tran_ban_phim.c</Name>
-          <ColumnNumber>50</ColumnNumber>
-          <TopLine>1</TopLine>
-          <CurrentLine>21</CurrentLine>
+          <Name>.\main.c</Name>
+          <ColumnNumber>6</ColumnNumber>
+          <TopLine>15</TopLine>
+          <CurrentLine>23</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>
