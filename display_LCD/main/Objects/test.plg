@@ -1,0 +1,21 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\cd\8051\Project\C\8051_Basics\inputKeypad_displayLCD\main\test.uvproj
+Project File Date:  09/27/2021
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling test.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_OFFSCREEN?TEST
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_OFF_BLINKCUR?TEST
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_SENDFLOAT?TEST
+Program Size: data=81.1 xdata=0 code=3091
+creating hex file from ".\Objects\test"...
+".\Objects\test" - 0 Error(s), 3 Warning(s).

@@ -1,0 +1,64 @@
+C51 COMPILER V9.01   TEST                                                                  07/12/2023 19:22:37 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE TEST
+OBJECT MODULE PLACED IN .\Objects\test.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE test.c BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\test.lst) OBJECT(.\Object
+                    -s\test.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include "LCD_16x2_4bit.h"
+   3          #include "Keypad_4x3.h"
+   4          
+   5          
+   6          
+   7          void main()
+   8          {       
+   9   1          uint numOfChars = 0, col, row, i;
+  10   1              uchar buffer[LCD_numOfCols] = "";
+  11   1              
+  12   1              lcd_init();
+  13   1              lcd_sendStr("Enter character:");
+  14   1              lcd_blinkCur();
+  15   1              
+  16   1          while(1)
+  17   1          {                   
+  18   2                      col = keypad_scanColumn();
+  19   2      
+  20   2                      if (col != -1)                                                          // when key is pressed
+  21   2                      {                                                               
+  22   3                              if (numOfChars == LCD_numOfCols-1) {    // handle full line
+  23   4                                      buffer[0] = 0x7F;                                       // symbol '<-'
+  24   4                                      for (i = 1; i < LCD_numOfCols-2; i++)
+  25   4                                              buffer[i] = buffer[i+1];                        
+  26   4                                      --numOfChars;
+  27   4                              }
+  28   3      
+  29   3                              row = keypad_scanRow();                                         
+  30   3                              buffer[numOfChars++] = keys[row][col];
+  31   3                              
+  32   3                              lcd_movCur(2, 1);                                               // display
+  33   3                              lcd_sendStr(buffer);
+  34   3                      }
+  35   2      
+  36   2                      lcd_movCur(2, numOfChars+1);
+  37   2                      
+  38   2                      delay_ms(100);
+  39   2          }
+  40   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    666    ----
+   CONSTANT SIZE    =     33    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     12      47
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

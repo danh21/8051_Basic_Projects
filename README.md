@@ -36,6 +36,7 @@
 
     - display_LCD: 
         + Version 1: uses LCD to display information, float number, integer counter.
+        + Version 2: uses keypad to enter character, then displays data on LCD.
 
 # Code:
     - Modify pin connection of devices in libraries if necessary:
