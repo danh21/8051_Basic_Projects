@@ -1,0 +1,105 @@
+C51 COMPILER V9.01   TEST                                                                  08/27/2023 11:54:51 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE TEST
+OBJECT MODULE PLACED IN test.OBJ
+COMPILER INVOKED BY: D:\phan_mem\KEIL\Keil\C51\BIN\C51.EXE test.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <at89x51.h>
+   2          
+   3          
+   4          
+   5          unsigned char rxData;
+   6          
+   7          #define led P2_7
+   8          
+   9          
+  10          
+  11          void delay_ms(int ms) 
+  12          {
+  13   1              int i, j;
+  14   1              for (i = 0; i < ms; i++)
+  15   1                      for (j = 0; j < 123; j++);
+  16   1      }
+  17          
+  18          
+  19          
+  20          void setupUART()
+  21          {
+  22   1              EA = 1;                         // enable global interrupt
+  23   1              ES = 1;                         // enable serial port interrupt 
+  24   1              SCON = 0x50;            // 8 bit uart, receive enable
+  25   1              TMOD = 0x20;            // enable timer1, mode 2 (auto reload)  
+  26   1              TH1 = TL1 = 0xFD;       // 9600 Baud rate
+  27   1              TR1 = 1;                        // start timer1                                                                         
+  28   1      }
+  29          
+  30          
+  31          
+  32          void serial_int(void) interrupt 4       // turn on/off led
+  33          {               
+  34   1              if (RI)                                                 // flag is set when a character is received completely
+  35   1              {                               
+  36   2                      RI = 0; 
+  37   2                      
+  38   2                      rxData = SBUF;
+  39   2                                                              
+  40   2                      switch (rxData) {
+  41   3                              case('0'):                              
+  42   3                                      led = 0;        
+  43   3                                      break;
+  44   3                              case('1'):                              
+  45   3                                      led = 1;        
+  46   3                                      break;          
+  47   3                      }                               
+  48   2              }
+  49   1      }
+  50          
+  51          
+  52          
+  53          void transmit_char(char Data)
+  54          {
+  55   1              SBUF = Data;
+C51 COMPILER V9.01   TEST                                                                  08/27/2023 11:54:51 PAGE 2   
+
+  56   1              while (TI == 0);                                // flag is set when a character is transmitted completely
+  57   1              TI = 0;
+  58   1      }
+  59          
+  60          
+  61          
+  62          void transmit_str(char *Data)
+  63          {
+  64   1              int i = 0;
+  65   1              for (i = 0; Data[i] != '\0'; i++)
+  66   1                      transmit_char(Data[i]);
+  67   1      }
+  68          
+  69          
+  70          
+  71          void main()
+  72          {
+  73   1              setupUART();
+  74   1      
+  75   1              while (1)
+  76   1              {               
+  77   2                      transmit_str("danh");
+  78   2                      delay_ms(1000);
+  79   2              }
+  80   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    154    ----
+   CONSTANT SIZE    =      5    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1       3
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
