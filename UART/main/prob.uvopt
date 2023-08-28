@@ -130,6 +130,23 @@
         <tIfile></tIfile>
         <pMon></pMon>
       </DebugOpt>
+      <Breakpoint>
+        <Bp>
+          <Number>0</Number>
+          <Type>0</Type>
+          <LineNumber>43</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>prob.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+      </Breakpoint>
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
@@ -163,7 +180,7 @@
 
   <Group>
     <GroupName>Source Group 1</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <File>
@@ -172,13 +189,13 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>39</ColumnNumber>
+      <ColumnNumber>28</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>54</TopLine>
-      <CurrentLine>75</CurrentLine>
+      <TopLine>36</TopLine>
+      <CurrentLine>53</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\test.c</PathWithFileName>
-      <FilenameWithoutPath>test.c</FilenameWithoutPath>
+      <PathWithFileName>.\prob.c</PathWithFileName>
+      <FilenameWithoutPath>prob.c</FilenameWithoutPath>
     </File>
   </Group>
 
@@ -1526,10 +1543,10 @@
       <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
-          <Name>.\test.c</Name>
-          <ColumnNumber>39</ColumnNumber>
-          <TopLine>54</TopLine>
-          <CurrentLine>75</CurrentLine>
+          <Name>.\prob.c</Name>
+          <ColumnNumber>28</ColumnNumber>
+          <TopLine>36</TopLine>
+          <CurrentLine>53</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

@@ -1,0 +1,36 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\cd\8051\Project\C\uart_ADC\prob.uvproj
+Project File Date:  11/22/2021
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling prob.c...
+PROB.C(32): error C202: 'P0_7': undefined identifier
+PROB.C(33): error C202: 'P0_7': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling prob.c...
+PROB.C(5): error C141: syntax error near '.7', expected ';'
+Target not created
+Build target 'Target 1'
+compiling prob.c...
+linking...
+Program Size: data=13.0 xdata=0 code=108
+creating hex file from "prob"...
+"prob" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling prob.c...
+linking...
+Program Size: data=10.0 xdata=0 code=101
+creating hex file from "prob"...
+"prob" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling prob.c...
+linking...
+Program Size: data=10.0 xdata=0 code=100
+creating hex file from "prob"...
+"prob" - 0 Error(s), 0 Warning(s).

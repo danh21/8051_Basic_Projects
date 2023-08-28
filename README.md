@@ -47,8 +47,10 @@
         + Version 1: uses ADC0808 to read temperature from LM35 sensor, then displays data on LCD.
         + Version 2: uses ADC0808 to read temperature from 8 LM35 sensors, then display value pairs (channel - temperature) on led 7-segment sequentially.
 
-    - UART:
-        + Version 1: uses UART protocol to transmit data to or receive data from Terminal. More details about setup at Instruction.doc.
+    - UART: 
+        + Version 1: uses UART protocol to transmit data to Terminal or receive data from Terminal to turn on/off led.
+        + Version 2: reads ADC data and handles to display on led 7-segment; uses UART protocol to transmit data to Terminal or receive data from Terminal to turn on/off led. 
+        + More details about setup at Instruction.doc.
 
 # Code:
     - Modify pin connection of devices in libraries if necessary:
