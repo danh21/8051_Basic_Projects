@@ -1,0 +1,180 @@
+C51 COMPILER V9.01   RAM_62256_UART                                                        08/29/2023 21:10:54 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE RAM_62256_UART
+OBJECT MODULE PLACED IN RAM_62256_uart.OBJ
+COMPILER INVOKED BY: D:\phan_mem\KEIL\Keil\C51\BIN\C51.EXE RAM_62256_uart.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <AT89X51.H>
+   2          
+   3          
+   4          
+   5          #define B9600 -3        // baud 9600 11.059MHz (clock frequency of 8051)
+   6          #define B4800 -6        // baud 4800 11.059MHz
+   7          #define B2400 -12       // baud 2400 11.059MHz
+   8          #define B1200 -24       // baud 1200 11.059MHz
+   9          
+  10          /* Define pins */
+  11          #define DBLED P3_2
+  12          #define LED_UP P3_3
+  13          #define LED_DOWN P3_4
+  14          unsigned char xdata *pp;
+  15          
+  16          void SetupSerial(char baud);
+  17          void TxChar(unsigned char ch);
+  18          void TxStr(char *str);
+  19          void TxCrLf(void);
+  20          unsigned char RxChar(void);
+  21          void ResetXRam(void);
+  22          void write_ram(unsigned int add, unsigned char dat);
+  23          unsigned char read_ram(unsigned int add);
+  24          
+  25          
+  26          
+  27          void main(void) 
+  28          {
+  29   1              unsigned char rxData, txData;
+  30   1      
+  31   1              SetupSerial(B9600);
+  32   1      
+  33   1              DBLED = 1;
+  34   1              LED_UP = 1;
+  35   1              LED_DOWN = 1;
+  36   1      
+  37   1              TxStr("Test External RAM 62C256");
+  38   1              TxCrLf();
+  39   1      
+  40   1              ResetXRam();
+  41   1      
+  42   1              while(1) 
+  43   1              {
+  44   2                      if(RI) 
+  45   2                      {                                       
+  46   3                              rxData = RxChar();                              // receive data 
+  47   3                              DBLED = 0;                                                                                      
+  48   3                                      
+  49   3                              switch(rxData) {
+  50   4                                      case 'u':                                       // uppercase
+  51   4                                              LED_UP = 0;             
+  52   4                                              LED_DOWN = 1;
+  53   4                                              TxChar(rxData - 32);    
+  54   4                                              TxCrLf();
+  55   4                                              break;
+C51 COMPILER V9.01   RAM_62256_UART                                                        08/29/2023 21:10:54 PAGE 2   
+
+  56   4                                      case 'L':                                       // lowercase
+  57   4                                              LED_DOWN = 0;           
+  58   4                                              LED_UP = 1;
+  59   4                                              TxChar(rxData + 32);    
+  60   4                                              TxCrLf();
+  61   4                                              break;
+  62   4                                      default:
+  63   4                                              LED_UP = 1;                     
+  64   4                                              LED_DOWN = 1;
+  65   4                                              break;
+  66   4                              }
+  67   3      
+  68   3                              txData = read_ram(rxData);              // transmit data from RAM
+  69   3                              TxChar(txData); 
+  70   3                              TxCrLf();
+  71   3                      }
+  72   2              }
+  73   1      }
+  74          
+  75          
+  76          
+  77          void SetupSerial(char baud)
+  78          {
+  79   1              SCON = 0x50;    // receive enable; UART8bit
+  80   1              TMOD = 0x20;    // timer 1, auto reload 
+  81   1              TH1 = baud;
+  82   1              TF1 = 0;
+  83   1              TR1 = 1;
+  84   1      }
+  85          
+  86          
+  87          
+  88          //***************Transmit************************
+  89          void TxChar(unsigned char ch)
+  90          {
+  91   1              SBUF = ch;
+  92   1              while(TI == 0); 
+  93   1              TI = 0;
+  94   1      }
+  95          
+  96          
+  97          
+  98          void TxStr(char *str)
+  99          {
+ 100   1              while(*str != '\0')     
+ 101   1                      TxChar(*str++);
+ 102   1      }
+ 103          
+ 104          
+ 105          
+ 106          
+ 107          void TxCrLf(void)       // new line
+ 108          {
+ 109   1              TxChar(13);             // \r
+ 110   1              TxChar(10);             // \n
+ 111   1      }
+ 112          
+ 113          
+ 114          
+ 115          //***************Receive************************
+ 116          unsigned char RxChar(void)
+ 117          {
+C51 COMPILER V9.01   RAM_62256_UART                                                        08/29/2023 21:10:54 PAGE 3   
+
+ 118   1              RI = 0;
+ 119   1              return SBUF;
+ 120   1      }
+ 121          
+ 122          
+ 123          
+ 124          //***********************************************
+ 125          void ResetXRam(void)
+ 126          {
+ 127   1              unsigned int j;
+ 128   1      
+ 129   1              TxStr("Reset Xram ...");
+ 130   1              TxCrLf();
+ 131   1      
+ 132   1              for (j = 0; j < 257; j++)
+ 133   1                      write_ram(j, j%256);
+ 134   1      
+ 135   1              TxStr("Reset RAM completely");
+ 136   1              TxCrLf();
+ 137   1      }
+ 138          
+ 139          
+ 140          
+ 141          void write_ram(unsigned int add, unsigned char dat)
+ 142          {
+ 143   1              pp = 0x0000 + add;
+ 144   1              *pp = dat;
+ 145   1      }
+ 146          
+ 147          
+ 148          
+ 149          unsigned char read_ram(unsigned int add)
+ 150          {
+ 151   1              pp = 0x0000 + add;
+ 152   1              return *pp;
+ 153   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    244    ----
+   CONSTANT SIZE    =     61    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2       7
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

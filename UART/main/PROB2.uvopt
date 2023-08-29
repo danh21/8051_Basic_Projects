@@ -25,7 +25,7 @@
     <ToolsetNumber>0x0</ToolsetNumber>
     <ToolsetName>MCS-51</ToolsetName>
     <TargetOption>
-      <CLK51>12000000</CLK51>
+      <CLK51>24000000</CLK51>
       <OPTTT>
         <gFlags>1</gFlags>
         <BeepAtEnd>1</BeepAtEnd>
@@ -130,6 +130,23 @@
         <tIfile></tIfile>
         <pMon></pMon>
       </DebugOpt>
+      <Breakpoint>
+        <Bp>
+          <Number>0</Number>
+          <Type>0</Type>
+          <LineNumber>30</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>RAM_62256_uart.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+      </Breakpoint>
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
@@ -163,7 +180,7 @@
 
   <Group>
     <GroupName>Source Group 1</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <File>
@@ -172,13 +189,13 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>18</ColumnNumber>
+      <ColumnNumber>30</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>33</TopLine>
-      <CurrentLine>33</CurrentLine>
+      <TopLine>44</TopLine>
+      <CurrentLine>62</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\prob.c</PathWithFileName>
-      <FilenameWithoutPath>prob.c</FilenameWithoutPath>
+      <PathWithFileName>.\RAM_62256_uart.c</PathWithFileName>
+      <FilenameWithoutPath>RAM_62256_uart.c</FilenameWithoutPath>
     </File>
   </Group>
 
@@ -1526,10 +1543,10 @@
       <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
-          <Name>.\prob.c</Name>
-          <ColumnNumber>18</ColumnNumber>
-          <TopLine>33</TopLine>
-          <CurrentLine>33</CurrentLine>
+          <Name>.\RAM_62256_uart.c</Name>
+          <ColumnNumber>30</ColumnNumber>
+          <TopLine>44</TopLine>
+          <CurrentLine>62</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

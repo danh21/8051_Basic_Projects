@@ -49,7 +49,8 @@
 
     - UART: 
         + Version 1: uses UART protocol to transmit data to Terminal or receive data from Terminal to turn on/off led.
-        + Version 2: reads ADC data and handles to display on led 7-segment; uses UART protocol to transmit data to Terminal or receive data from Terminal to turn on/off led. 
+        + Version 2: reads ADC data and handles to display on led 7-segment; uses UART protocol to transmit data to Terminal or receive data from Terminal to turn on/off led.
+        + Version 3: uses UART protocol to transmit data that be read from RAM to Terminal or receive data from Terminal to handle.
         + More details about setup at Instruction.doc.
 
 # Code:
