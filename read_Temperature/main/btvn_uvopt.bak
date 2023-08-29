@@ -172,13 +172,13 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>44</ColumnNumber>
+      <ColumnNumber>8</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>15</TopLine>
-      <CurrentLine>15</CurrentLine>
+      <TopLine>37</TopLine>
+      <CurrentLine>57</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\prob2.c</PathWithFileName>
-      <FilenameWithoutPath>prob2.c</FilenameWithoutPath>
+      <PathWithFileName>.\main.c</PathWithFileName>
+      <FilenameWithoutPath>main.c</FilenameWithoutPath>
     </File>
   </Group>
 
@@ -1526,10 +1526,10 @@
       <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
-          <Name>.\prob2.c</Name>
-          <ColumnNumber>44</ColumnNumber>
-          <TopLine>15</TopLine>
-          <CurrentLine>15</CurrentLine>
+          <Name>.\main.c</Name>
+          <ColumnNumber>8</ColumnNumber>
+          <TopLine>37</TopLine>
+          <CurrentLine>57</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>
