@@ -1,0 +1,259 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/02/2023  18:05:48  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\PHAN_MEM\KEIL\KEIL\C51\BIN\BL51.EXE main.obj, siop.obj TO PROB3
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  siop.obj (SIOP)
+  D:\PHAN_MEM\KEIL\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\PHAN_MEM\KEIL\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+
+
+LINK MAP OF MODULE:  PROB3 (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0004H     UNIT         _DATA_GROUP_
+            IDATA   000CH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     003BH     UNIT         ?PR?MAIN?MAIN
+            CODE    003EH     0031H     UNIT         ?CO?MAIN
+            CODE    006FH     0025H     UNIT         ?PR?READXROM?MAIN
+            CODE    0094H     0025H     UNIT         ?PR?_TXSTR?SIOP
+            CODE    00B9H     001AH     UNIT         ?PR?_READBYTE?MAIN
+            CODE    00D3H     0019H     UNIT         ?C?LIB_CODE
+            CODE    00ECH     0018H     UNIT         ?PR?_TXHEX?SIOP
+            CODE    0104H     0013H     UNIT         ?PR?_TXNIBLE?SIOP
+            CODE    0117H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0123H     000BH     UNIT         ?PR?_SETUPSERIAL?SIOP
+            CODE    012EH     000AH     UNIT         ?PR?TXCRLF?SIOP
+            CODE    0138H     0008H     UNIT         ?PR?_TXCHAR?SIOP
+            CODE    0140H     0005H     UNIT         ?PR?RXCHAR?SIOP
+
+
+
+OVERLAY MAP OF MODULE:   PROB3 (MAIN)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                  0008H    0001H
+  +--> ?PR?_SETUPSERIAL?SIOP
+  +--> ?CO?MAIN
+  +--> ?PR?_TXSTR?SIOP
+  +--> ?PR?TXCRLF?SIOP
+  +--> ?PR?RXCHAR?SIOP
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/02/2023  18:05:48  PAGE 2
+
+
+  +--> ?PR?_TXCHAR?SIOP
+  +--> ?PR?READXROM?MAIN
+
+?PR?_TXSTR?SIOP                0009H    0003H
+  +--> ?PR?_TXCHAR?SIOP
+
+?PR?TXCRLF?SIOP                -----    -----
+  +--> ?PR?_TXCHAR?SIOP
+
+?PR?READXROM?MAIN              0009H    0003H
+  +--> ?PR?_READBYTE?MAIN
+  +--> ?PR?_TXHEX?SIOP
+  +--> ?PR?TXCRLF?SIOP
+
+?PR?_TXHEX?SIOP                -----    -----
+  +--> ?PR?_TXNIBLE?SIOP
+  +--> ?PR?_TXCHAR?SIOP
+
+?PR?_TXNIBLE?SIOP              -----    -----
+  +--> ?PR?_TXCHAR?SIOP
+
+
+
+SYMBOL TABLE OF MODULE:  PROB3 (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  C:006FH         PUBLIC        ReadXRom
+  C:00B9H         PUBLIC        _ReadByte
+  B:00B0H.2       PUBLIC        P3_2
+  B:00B0H.5       PUBLIC        P3_5
+  B:00B0H.6       PUBLIC        P3_6
+  B:00B0H.7       PUBLIC        P3_7
+  B:0098H.0       PUBLIC        RI
+  D:0081H         PUBLIC        SP
+  C:0003H         PUBLIC        main
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        ch
+  -------         ENDDO         
+  C:0003H         LINE#         30
+  C:0003H         LINE#         31
+  C:0003H         LINE#         34
+  C:0006H         LINE#         36
+  C:000BH         LINE#         38
+  C:0014H         LINE#         39
+  C:0017H         LINE#         40
+  C:0020H         LINE#         41
+  C:0023H         LINE#         43
+  C:0023H         LINE#         44
+  C:0023H         LINE#         45
+  C:0026H         LINE#         46
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/02/2023  18:05:48  PAGE 3
+
+
+  C:0026H         LINE#         47
+  C:0028H         LINE#         49
+  C:002DH         LINE#         51
+  C:0030H         LINE#         52
+  C:0033H         LINE#         54
+  C:0039H         LINE#         55
+  C:0039H         LINE#         56
+  C:003CH         LINE#         57
+  -------         ENDPROC       MAIN
+  -------         PROC          READXROM
+  -------         DO            
+  D:0009H         SYMBOL        ch
+  D:000AH         SYMBOL        addr
+  -------         ENDDO         
+  C:006FH         LINE#         67
+  C:006FH         LINE#         68
+  C:006FH         LINE#         72
+  C:0074H         LINE#         73
+  C:007DH         LINE#         74
+  C:0080H         LINE#         75
+  C:0091H         LINE#         77
+  -------         ENDPROC       READXROM
+  -------         PROC          _READBYTE
+  D:0006H         SYMBOL        Addr
+  -------         DO            
+  D:0007H         SYMBOL        RetVal
+  D:0007H         SYMBOL        highAddr
+  D:0005H         SYMBOL        lowAddr
+  -------         ENDDO         
+  C:00B9H         LINE#         82
+  C:00B9H         LINE#         83
+  C:00B9H         LINE#         86
+  C:00BBH         LINE#         87
+  C:00BDH         LINE#         89
+  C:00BFH         LINE#         90
+  C:00C1H         LINE#         91
+  C:00C3H         LINE#         92
+  C:00C6H         LINE#         93
+  C:00C8H         LINE#         95
+  C:00CAH         LINE#         96
+  C:00CCH         LINE#         98
+  C:00CEH         LINE#         100
+  C:00D0H         LINE#         101
+  C:00D2H         LINE#         103
+  C:00D2H         LINE#         104
+  -------         ENDPROC       _READBYTE
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        SIOP
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0094H         PUBLIC        _TxStr
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  C:012EH         PUBLIC        TxCrLf
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/02/2023  18:05:48  PAGE 4
+
+
+  C:0104H         PUBLIC        _TxNible
+  C:0140H         PUBLIC        RxChar
+  C:0138H         PUBLIC        _TxChar
+  D:008DH         PUBLIC        TH1
+  B:0088H.6       PUBLIC        TR1
+  C:00ECH         PUBLIC        _TxHex
+  C:0123H         PUBLIC        _SetupSerial
+  -------         PROC          _SETUPSERIAL
+  D:0007H         SYMBOL        baud
+  C:0123H         LINE#         14
+  C:0123H         LINE#         15
+  C:0123H         LINE#         16
+  C:0126H         LINE#         17
+  C:0129H         LINE#         18
+  C:012BH         LINE#         19
+  C:012DH         LINE#         20
+  -------         ENDPROC       _SETUPSERIAL
+  -------         PROC          _TXCHAR
+  D:0007H         SYMBOL        ch
+  C:0138H         LINE#         24
+  C:0138H         LINE#         25
+  C:0138H         LINE#         26
+  C:013AH         LINE#         27
+  C:013DH         LINE#         28
+  C:013FH         LINE#         29
+  -------         ENDPROC       _TXCHAR
+  -------         PROC          RXCHAR
+  C:0140H         LINE#         33
+  C:0140H         LINE#         34
+  C:0140H         LINE#         35
+  C:0142H         LINE#         36
+  C:0144H         LINE#         37
+  -------         ENDPROC       RXCHAR
+  -------         PROC          _TXSTR
+  D:0009H         SYMBOL        str
+  C:0094H         LINE#         41
+  C:009AH         LINE#         42
+  C:009AH         LINE#         43
+  C:00A5H         LINE#         44
+  C:00B8H         LINE#         45
+  -------         ENDPROC       _TXSTR
+  -------         PROC          _TXNIBLE
+  D:0007H         SYMBOL        ch
+  C:0104H         LINE#         49
+  C:0104H         LINE#         50
+  C:0104H         LINE#         51
+  C:010AH         LINE#         52
+  C:0110H         LINE#         54
+  C:0114H         LINE#         56
+  -------         ENDPROC       _TXNIBLE
+  -------         PROC          _TXHEX
+  D:0006H         SYMBOL        ch
+  C:00ECH         LINE#         61
+  C:00EEH         LINE#         62
+  C:00EEH         LINE#         63
+  C:00F8H         LINE#         64
+  C:00FFH         LINE#         66
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/02/2023  18:05:48  PAGE 5
+
+
+  -------         ENDPROC       _TXHEX
+  -------         PROC          TXCRLF
+  C:012EH         LINE#         71
+  C:012EH         LINE#         72
+  C:012EH         LINE#         73
+  C:0133H         LINE#         74
+  -------         ENDPROC       TXCRLF
+  -------         ENDMOD        SIOP
+
+  -------         MODULE        ?C?CLDPTR
+  C:00D3H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+Program Size: data=13.0 xdata=0 code=325
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
