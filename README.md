@@ -41,7 +41,9 @@
         + Version 2: uses keypad to enter character, then displays data on LCD.
         + Version 3: uses button (to create an interrupt) to count up, display running string and counter on LCD.
 
-    - memory_communication: writes data into external RAM, then reads data from RAM and displays on LCD.
+    - memory_communication: 
+        + Version 1: writes data into external RAM, then reads data from RAM and displays on LCD.
+        + Version 2: waits for receiving signal from Terminal by serial port, reads data from external EPROM then transmit that data to Terminal by UART protocol. 
 
     - read_Temperature: 
         + Version 1: uses ADC0808 to read temperature from LM35 sensor, then displays data on LCD.
